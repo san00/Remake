@@ -9,8 +9,8 @@ $spacing-xl: calc(#{$base-space} * 4); // 64px spacing
 $spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
 
 // colour variables
-$background-colour:black;
-$secondary-background-colour:white;
+$background-colour: black;
+$secondary-background-colour: white;
 $accent-colour: #63a6de;
 
 
@@ -30,15 +30,59 @@ html {
     box-sizing: inherit;
 }
 
-.container {
-    display: flex;
-    margin-top: $spacing-m;
+.banner {
+    // display: flex;
+    // margin-top: $spacing-m;
 }
 
-.banner__img{
-  width: 100vw;
-  height: 30vh;
-  object-fit: cover;
+// .banner__img{
+//   width: 100vw;
+//   height: 30vh;
+//   object-fit: cover;
+// }
+
+.banner__slider {
+    display: flex ;
+    overflow: auto;
+}
+
+.banner__slider-images {
+    height: 30vh;
+    object-fit: cover;
+    opacity: 2s ease-in-out;
+    scroll-behavior: smooth;
+    width: 100vw;
+    // animation: slide 5s infinite;
+}
+
+
+// animate banner slider
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.banner__slider-ui {
+    background: $background-colour;
+    border-radius: 50%;
+    bottom: 10rem;
+    color: #63a6de;
+    left: 20rem;
+    padding: $spacing-s;
+    position: relative;
+    text-decoration: none;
 }
 
 .text-info {
@@ -78,22 +122,22 @@ html {
 }
 
 .card__img {
+    margin-bottom: $spacing-l;
     object-fit: cover;
     width: 90vw;
-    margin-bottom:$spacing-l; 
 }
 
 .card__text {
-  padding-bottom: $spacing-l;
-  padding-left: $spacing-m;
+    padding-bottom: $spacing-l;
+    padding-left: $spacing-m;
 }
 
 .card__text-header {
     padding-bottom: $spacing-m;
 }
-.card__links{
-  padding-bottom: $spacing-l;
-  padding-left: $spacing-m;
+.card__links {
+    padding-bottom: $spacing-l;
+    padding-left: $spacing-m;
 }
 
 .footer {
@@ -101,11 +145,40 @@ html {
     height: 20vh;
 }
 
-.footer__text{
-color:$secondary-background-colour;
-text-align: center;
-padding-top: $spacing-xl;
+.footer__text {
+    color: $secondary-background-colour;
+    padding-top: $spacing-xl;
+    text-align: center;
 }
+
+// @media screen and (min-width: 46em) {
+
+//   .container{
+//     display: flex;
+//     flex-flow: row;
+//     margin-top: $spacing-m;
+//   }
+
+//   .banner{
+//     width: 65vw;
+//     background: black;
+//     height: 25.31em;
+//     }
+
+//     .banner-aside{
+//     background: lightgreen;
+//      width: 35vw;
+//     }
+
+//     .banner-overlay{
+//       position: relative;
+//       top: $spacing-l;
+//       right: $spacing-l;
+//       height: 20rem;
+//       background:lightblue;
+//     }
+
+// }
 
 // photo credits
 // <!-- Photo by Matt Artz on Unsplash -->

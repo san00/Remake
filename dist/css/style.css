@@ -12,17 +12,49 @@ html {
   -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
-.container {
+.banner__slider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 1rem; }
+  overflow: auto; }
 
-.banner__img {
-  width: 100vw;
+.banner__slider-images {
   height: 30vh;
   -o-object-fit: cover;
-  object-fit: cover; }
+  object-fit: cover;
+  opacity: 2s ease-in-out;
+  scroll-behavior: smooth;
+  width: 100vw; }
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@keyframes slide {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+.banner__slider-ui {
+  background: black;
+  border-radius: 50%;
+  bottom: 10rem;
+  color: #63a6de;
+  left: 20rem;
+  padding: calc(1rem / 2);
+  position: relative;
+  text-decoration: none; }
 
 .text-info {
   height: 15rem;
@@ -56,10 +88,10 @@ html {
   margin-right: calc(1rem * 2); }
 
 .card__img {
+  margin-bottom: calc(1rem * 2);
   -o-object-fit: cover;
   object-fit: cover;
-  width: 90vw;
-  margin-bottom: calc(1rem * 2); }
+  width: 90vw; }
 
 .card__text {
   padding-bottom: calc(1rem * 2);
@@ -78,5 +110,5 @@ html {
 
 .footer__text {
   color: white;
-  text-align: center;
-  padding-top: calc(1rem * 4); }
+  padding-top: calc(1rem * 4);
+  text-align: center; }

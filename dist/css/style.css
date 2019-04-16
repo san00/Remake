@@ -12,19 +12,59 @@ html {
   -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
 .banner__slider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: auto; }
+  width: 100%; }
 
-.banner__slider-images {
-  height: 30vh;
+.banner__slider-image {
+  -webkit-animation: 20s slide infinite;
+  animation: 20s slide infinite;
   -o-object-fit: cover;
   object-fit: cover;
-  opacity: 2s ease-in-out;
-  scroll-behavior: smooth;
-  width: 100vw; }
+  width: 100%;
+  height: 30vh;
+  z-index: 1; }
+
+.banner__slide-1 {
+  left: 0;
+  position: relative;
+  top: 0; }
+
+.banner__slide-2 {
+  left: 0;
+  position: absolute;
+  top: 0; }
+
+.banner__navbar {
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  left: 1rem;
+  position: relative;
+  top: -15rem;
+  width: 25%;
+  z-index: 2; }
+
+.banner__navbar-link {
+  font-size: 1.3em;
+  padding: calc(1rem / 4) 0 calc(1rem / 4) calc(1rem / 4);
+  text-decoration: none; }
 
 @-webkit-keyframes slide {
   0% {
@@ -32,7 +72,7 @@ html {
   25% {
     opacity: 0; }
   50% {
-    opacity: 0; }
+    opacity: 1; }
   100% {
     opacity: 0; } }
 
@@ -42,19 +82,17 @@ html {
   25% {
     opacity: 0; }
   50% {
-    opacity: 0; }
+    opacity: 1; }
   100% {
     opacity: 0; } }
 
-.banner__slider-ui {
-  background: black;
-  border-radius: 50%;
-  bottom: 10rem;
-  color: #63a6de;
-  left: 20rem;
-  padding: calc(1rem / 2);
-  position: relative;
-  text-decoration: none; }
+.banner__slider-image:nth-child(1) {
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s; }
+
+.banner__slider-image:nth-child(2) {
+  -webkit-animation-delay: 20s;
+  animation-delay: 20s; }
 
 .text-info {
   height: 15rem;

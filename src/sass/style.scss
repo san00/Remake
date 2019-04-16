@@ -9,8 +9,8 @@ $spacing-xl: calc(#{$base-space} * 4); // 64px spacing
 $spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
 
 // colour variables
-$background-colour: black;
-$secondary-background-colour: white;
+$background-colour-primary: black;
+$background-colour-secondary: white;
 $accent-colour: #63a6de;
 
 
@@ -31,32 +31,53 @@ html {
 }
 
 .banner {
-    // display: flex;
-    // margin-top: $spacing-m;
+    display: flex;
+    flex-direction: column;
 }
-
-// .banner__img{
-//   width: 100vw;
-//   height: 30vh;
-//   object-fit: cover;
-// }
 
 .banner__slider {
-    display: flex ;
-    overflow: auto;
+    display: flex;
+    width: 100%;
 }
 
-.banner__slider-images {
-    height: 30vh;
+.banner__slider-image {
+    animation: 20s slide infinite;
     object-fit: cover;
-    opacity: 2s ease-in-out;
-    scroll-behavior: smooth;
-    width: 100vw;
-    // animation: slide 5s infinite;
+    width: 100%;
+    height: 30vh;
+    z-index: 1;
 }
 
+.banner__slide-1 {
+    left: 0;
+    position: relative;
+    top: 0;
+}
 
-// animate banner slider
+.banner__slide-2 {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.banner__navbar {
+    background-color: $background-colour-primary;
+    display: flex;
+    flex-direction: column;
+    left: $spacing-m;
+    position: relative;
+    top: -15rem;
+    width: 25%;
+    z-index: 2;
+}
+
+.banner__navbar-link {
+    font-size: 1.3em;
+    padding: $spacing-xs 0 $spacing-xs $spacing-xs;
+    text-decoration: none;
+}
+
+// animate images
 
 @keyframes slide {
     0% {
@@ -66,23 +87,20 @@ html {
         opacity: 0;
     }
     50% {
-        opacity: 0;
+        opacity: 1;
     }
     100% {
         opacity: 0;
     }
 }
 
-
-.banner__slider-ui {
-    background: $background-colour;
-    border-radius: 50%;
-    bottom: 10rem;
-    color: #63a6de;
-    left: 20rem;
-    padding: $spacing-s;
-    position: relative;
-    text-decoration: none;
+//loop images 
+@for $i from 1 through 2 {
+    .banner__slider-image {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * (10s);
+        }
+    }
 }
 
 .text-info {
@@ -141,46 +159,12 @@ html {
 }
 
 .footer {
-    background: $background-colour;
+    background: $background-colour-primary;
     height: 20vh;
 }
 
 .footer__text {
-    color: $secondary-background-colour;
+    color: $background-colour-secondary;
     padding-top: $spacing-xl;
     text-align: center;
 }
-
-// @media screen and (min-width: 46em) {
-
-//   .container{
-//     display: flex;
-//     flex-flow: row;
-//     margin-top: $spacing-m;
-//   }
-
-//   .banner{
-//     width: 65vw;
-//     background: black;
-//     height: 25.31em;
-//     }
-
-//     .banner-aside{
-//     background: lightgreen;
-//      width: 35vw;
-//     }
-
-//     .banner-overlay{
-//       position: relative;
-//       top: $spacing-l;
-//       right: $spacing-l;
-//       height: 20rem;
-//       background:lightblue;
-//     }
-
-// }
-
-// photo credits
-// <!-- Photo by Matt Artz on Unsplash -->
-// <!-- Photo by Mohamed Nohassi on Unsplash -->
-// photo - Patrick Tomasso

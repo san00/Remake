@@ -33,28 +33,28 @@ html {
 .banner {
     display: flex;
     flex-direction: column;
+    max-width: 100%;
 }
 
-.banner__slider {
+.banner__box {
     display: flex;
-    width: 100%;
 }
 
-.banner__slider-image {
+.banner__box-image {
     animation: 20s slide infinite;
+    height: 50vh;
     object-fit: cover;
     width: 100%;
-    height: 30vh;
     z-index: 1;
 }
 
-.banner__slide-1 {
+.banner__box-image-one {
     left: 0;
     position: relative;
     top: 0;
 }
 
-.banner__slide-2 {
+.banner__box-image-two {
     left: 0;
     position: absolute;
     top: 0;
@@ -62,22 +62,25 @@ html {
 
 .banner__navbar {
     background-color: $background-colour-primary;
+    bottom: 30rem;
     display: flex;
-    flex-direction: column;
-    left: $spacing-m;
+    margin: auto;
     position: relative;
-    top: -15rem;
-    width: 25%;
-    z-index: 2;
+    z-index: 3;
 }
 
 .banner__navbar-link {
+    color: $background-colour-secondary;
     font-size: 1.3em;
-    padding: $spacing-xs 0 $spacing-xs $spacing-xs;
-    text-decoration: none;
+    margin-left: $spacing-m;
+    text-align: center;
 }
 
-// animate images
+.banner__navbar-link--contact {
+    margin-right: $spacing-m;
+}
+
+// animate banner
 
 @keyframes slide {
     0% {
@@ -94,55 +97,101 @@ html {
     }
 }
 
-//loop images 
+//loop banner images 
 @for $i from 1 through 2 {
-    .banner__slider-image {
+    .banner__box-image {
         &:nth-child(#{$i}) {
             animation-delay: $i * (10s);
         }
     }
 }
 
-.text-info {
-    height: 15rem;
-    margin-bottom: $spacing-xl;
+.banner__overlay {
+    bottom: 15rem;
+    margin: auto;
+    padding: $spacing-l;
+    position: relative;
+    width: 50%;
+}
+
+.banner__overlay-header,
+.banner__overlay-text {
     text-align: center;
 }
 
-.text-info__header {
+// header line heights
+.banner__overlay-header,
+.portfolio__image-overlay-header,
+.text-section__header,
+.card__text-header {
+    font-size: 1.618em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+// body line heights
+.banner__overlay-text,
+.banner__navbar-link,
+.portfolio__image-overlay-text,
+.text-section__info,
+.card__text-info,
+.footer__text {
+    line-height: 1.6;
+}
+
+.text-section {
+    position: absolute;
+    text-align: center;
+}
+
+.text-section__one {
+    bottom: 10rem;
+    position: relative;
+}
+
+.text-section__two {
+    margin-bottom: $spacing-xxl;
+    position: relative;
+}
+
+.text-section__header {
     margin-bottom: $spacing-l;
     padding-top: $spacing-xxl;
 }
 
-.image__pic {
+// please rename these before saving
+.portfolio {
+    display: flex;
+    flex-direction: column;
     margin-left: $spacing-l;
     margin-right: $spacing-l;
+}
+
+.portfolio__image-one {
     object-fit: cover;
-    width: 90vw;
+    width: 100%;
 }
 
-.image-overlay {
+.portfolio__image-overlay {
     background: $accent-colour;
-    height: 10em;
-    margin-left: $spacing-l;
-    margin-right: $spacing-l;
     padding: $spacing-l;
-    width: 90vw;
+    width: 100%;
 }
 
-.image-overlay__header {
+.portfolio__image-overlay-header {
     padding-bottom: $spacing-m;
 }
 
 .card {
+    margin-bottom: $spacing-l;
     margin-left: $spacing-l;
     margin-right: $spacing-l;
 }
 
 .card__img {
-    margin-bottom: $spacing-l;
+    margin-bottom: $spacing-xl;
+    max-width: 100%;
     object-fit: cover;
-    width: 90vw;
 }
 
 .card__text {
@@ -168,3 +217,51 @@ html {
     padding-top: $spacing-xl;
     text-align: center;
 }
+
+@media screen and (min-width: 53rem) {
+    .banner__box {
+        position: relative;
+        width: 60%;
+    }
+
+    .banner__overlay {
+        background: $accent-colour;
+        left: 20%;
+        opacity: 0.9;
+        z-index: 1;
+    }
+
+    .portfolio {
+        bottom: $spacing-l;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: $spacing-xl;
+        position: relative;
+    }
+
+    .portfolio__image-one {
+        left: 45%;
+        position: relative;
+        top: 5rem;
+    }
+
+    .portfolio__image-overlay {
+        opacity: 0.9;
+        position: relative;
+        right: 50%;
+        width: 50%;
+    }
+
+    .portfolio__image-overlay-header,
+    .portfolio__image-overlay-text {
+        position: relative;
+        text-align: center;
+        top: 4rem;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+    }
+}
+

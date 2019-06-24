@@ -1,5 +1,113 @@
-$bgColor:blue;
+// spacing scale for margins & padding
+$base-space: 1rem;
+$spacing-xxs: calc(#{$base-space} / 8); // 2px spacing
+$spacing-xs: calc(#{$base-space} / 4);// 4px spacing
+$spacing-s: calc(#{$base-space} / 2);// 8px spacing
+$spacing-m: $base-space; // 16px spacing
+$spacing-l: calc(#{$base-space} * 2); // 32px spacing
+$spacing-xl: calc(#{$base-space} * 4); // 64px spacing
+$spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
 
-h1{
-  color:$bgColor;
+// colour variables
+$background-colour:black;
+$secondary-background-colour:white;
+$accent-colour: #63a6de;
+
+
+
+html {
+    box-sizing: border-box;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+.container {
+    display: flex;
+    margin-top: $spacing-m;
+}
+
+.banner__img{
+  width: 100vw;
+  height: 30vh;
+  object-fit: cover;
+}
+
+.text-info {
+    height: 15rem;
+    margin-bottom: $spacing-xl;
+    text-align: center;
+}
+
+.text-info__header {
+    margin-bottom: $spacing-l;
+    padding-top: $spacing-xxl;
+}
+
+.image__pic {
+    margin-left: $spacing-l;
+    margin-right: $spacing-l;
+    object-fit: cover;
+    width: 90vw;
+}
+
+.image-overlay {
+    background: $accent-colour;
+    height: 10em;
+    margin-left: $spacing-l;
+    margin-right: $spacing-l;
+    padding: $spacing-l;
+    width: 90vw;
+}
+
+.image-overlay__header {
+    padding-bottom: $spacing-m;
+}
+
+.card {
+    margin-left: $spacing-l;
+    margin-right: $spacing-l;
+}
+
+.card__img {
+    object-fit: cover;
+    width: 90vw;
+    margin-bottom:$spacing-l; 
+}
+
+.card__text {
+  padding-bottom: $spacing-l;
+  padding-left: $spacing-m;
+}
+
+.card__text-header {
+    padding-bottom: $spacing-m;
+}
+.card__links{
+  padding-bottom: $spacing-l;
+  padding-left: $spacing-m;
+}
+
+.footer {
+    background: $background-colour;
+    height: 20vh;
+}
+
+.footer__text{
+color:$secondary-background-colour;
+text-align: center;
+padding-top: $spacing-xl;
+}
+
+// photo credits
+// <!-- Photo by Matt Artz on Unsplash -->
+// <!-- Photo by Mohamed Nohassi on Unsplash -->
+// photo - Patrick Tomasso

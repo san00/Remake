@@ -9,8 +9,8 @@ $spacing-xl: calc(#{$base-space} * 4); // 64px spacing
 $spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
 
 // colour variables
-$background-colour:black;
-$secondary-background-colour:white;
+$background-colour-primary: black;
+$background-colour-secondary: white;
 $accent-colour: #63a6de;
 
 
@@ -30,84 +30,238 @@ html {
     box-sizing: inherit;
 }
 
-.container {
+.banner {
     display: flex;
-    margin-top: $spacing-m;
+    flex-direction: column;
+    max-width: 100%;
 }
 
-.banner__img{
-  width: 100vw;
-  height: 30vh;
-  object-fit: cover;
+.banner__box {
+    display: flex;
 }
 
-.text-info {
-    height: 15rem;
-    margin-bottom: $spacing-xl;
+.banner__box-image {
+    animation: 20s slide infinite;
+    height: 50vh;
+    object-fit: cover;
+    width: 100%;
+    z-index: 1;
+}
+
+.banner__box-image-one {
+    left: 0;
+    position: relative;
+    top: 0;
+}
+
+.banner__box-image-two {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.banner__navbar {
+    background-color: $background-colour-primary;
+    bottom: 30rem;
+    display: flex;
+    margin: auto;
+    position: relative;
+    z-index: 3;
+}
+
+.banner__navbar-link {
+    color: $background-colour-secondary;
+    font-size: 1.3em;
+    margin-left: $spacing-m;
     text-align: center;
 }
 
-.text-info__header {
+.banner__navbar-link--contact {
+    margin-right: $spacing-m;
+}
+
+// animate banner
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+//loop banner images 
+@for $i from 1 through 2 {
+    .banner__box-image {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * (10s);
+        }
+    }
+}
+
+.banner__overlay {
+    bottom: 15rem;
+    margin: auto;
+    padding: $spacing-l;
+    position: relative;
+    width: 50%;
+}
+
+.banner__overlay-header,
+.banner__overlay-text {
+    text-align: center;
+}
+
+// header line heights
+.banner__overlay-header,
+.portfolio__image-overlay-header,
+.text-section__header,
+.card__text-header {
+    font-size: 1.618em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+// body line heights
+.banner__overlay-text,
+.banner__navbar-link,
+.portfolio__image-overlay-text,
+.text-section__info,
+.card__text-info,
+.footer__text {
+    line-height: 1.6;
+}
+
+.text-section {
+    position: absolute;
+    text-align: center;
+}
+
+.text-section__one {
+    bottom: 10rem;
+    position: relative;
+}
+
+.text-section__two {
+    margin-bottom: $spacing-xxl;
+    position: relative;
+}
+
+.text-section__header {
     margin-bottom: $spacing-l;
     padding-top: $spacing-xxl;
 }
 
-.image__pic {
+// please rename these before saving
+.portfolio {
+    display: flex;
+    flex-direction: column;
     margin-left: $spacing-l;
     margin-right: $spacing-l;
+}
+
+.portfolio__image-one {
     object-fit: cover;
-    width: 90vw;
+    width: 100%;
 }
 
-.image-overlay {
+.portfolio__image-overlay {
     background: $accent-colour;
-    height: 10em;
-    margin-left: $spacing-l;
-    margin-right: $spacing-l;
     padding: $spacing-l;
-    width: 90vw;
+    width: 100%;
 }
 
-.image-overlay__header {
+.portfolio__image-overlay-header {
     padding-bottom: $spacing-m;
 }
 
 .card {
+    margin-bottom: $spacing-l;
     margin-left: $spacing-l;
     margin-right: $spacing-l;
 }
 
 .card__img {
+    margin-bottom: $spacing-xl;
+    max-width: 100%;
     object-fit: cover;
-    width: 90vw;
-    margin-bottom:$spacing-l; 
 }
 
 .card__text {
-  padding-bottom: $spacing-l;
-  padding-left: $spacing-m;
+    padding-bottom: $spacing-l;
+    padding-left: $spacing-m;
 }
 
 .card__text-header {
     padding-bottom: $spacing-m;
 }
-.card__links{
-  padding-bottom: $spacing-l;
-  padding-left: $spacing-m;
+.card__links {
+    padding-bottom: $spacing-l;
+    padding-left: $spacing-m;
 }
 
 .footer {
-    background: $background-colour;
+    background: $background-colour-primary;
     height: 20vh;
 }
 
-.footer__text{
-color:$secondary-background-colour;
-text-align: center;
-padding-top: $spacing-xl;
+.footer__text {
+    color: $background-colour-secondary;
+    padding-top: $spacing-xl;
+    text-align: center;
 }
 
-// photo credits
-// <!-- Photo by Matt Artz on Unsplash -->
-// <!-- Photo by Mohamed Nohassi on Unsplash -->
-// photo - Patrick Tomasso
+@media screen and (min-width: 53rem) {
+    .banner__box {
+        position: relative;
+        width: 60%;
+    }
+
+    .banner__overlay {
+        background: $accent-colour;
+        left: 20%;
+        opacity: 0.9;
+        z-index: 1;
+    }
+
+    .portfolio {
+        bottom: $spacing-l;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: $spacing-xl;
+        position: relative;
+    }
+
+    .portfolio__image-one {
+        left: 45%;
+        position: relative;
+        top: 5rem;
+    }
+
+    .portfolio__image-overlay {
+        opacity: 0.9;
+        position: relative;
+        right: 50%;
+        width: 50%;
+    }
+
+    .portfolio__image-overlay-header,
+    .portfolio__image-overlay-text {
+        position: relative;
+        text-align: center;
+        top: 4rem;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+    }
+}
+

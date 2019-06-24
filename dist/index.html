@@ -10,54 +10,64 @@
 
   <body>
     <section class="banner">
-      <img class="banner__img" src="images/bulb.jpg" alt="lightbulb"/>
+      <div class="banner__box">
+          <img class="banner__box-image banner__box-image-one" src="images/bulb.jpg" alt="lightbulb"/>
+          <img class="banner__box-image banner__box-image-two" src="images/sunset.jpg" alt="sunset"/>
+      </div>
+      <div class="banner__overlay">
+        <h2 class="banner__overlay-header">Magic moments</h2>
+        <p class="banner__overlay-text">in a dream, far far away</p>
+      </div>
       <nav class="banner__navbar">
-        <a class="banner__navbar-links" href="">home</a>
-        <a class="banner__navbar-links" href="">about</a>
-        <a class="banner__navbar-links" href="">work</a>
-        <a class="banner__navbar-links" href="">contact</a>
+        <a class="banner__navbar-link" href="">home</a>
+        <a class="banner__navbar-link" href="">about</a>
+        <a class="banner__navbar-link" href="">work</a>
+        <a class="banner__navbar-link banner__navbar-link--contact" href="">contact</a>
       </nav>
     </section>
-    <section class="text-info">
-      <h2 class="text-info__header">A creative website</h2>
-      <p class="text-info__text">Once upon a time, in a place called...</p>
+    <section class="text-section text-section__one">
+      <h2 class="text-section__header">A creative website</h2>
+      <p class="text-section__info">built for you, in a place called...</p>
     </section>
-    <div class="image">
-      <img class="image__pic" src="images/tool.jpg" alt="hand plane" />
+    <section class="portfolio">
+      <div class="portfolio__image">
+        <img class="portfolio__image-one" src="images/tool.jpg" alt="hand plane" />
+      </div>
+      <div class="portfolio__image-overlay">
+        <h2 class="portfolio__image-overlay-header">Magic moments</h2>
+        <p class="portfolio__image-overlay-text">in a dream, far far away</p>
+      </div>
+    </section>
+    <section class="text-section text-section__two">
+      <h2 class="text-section__header">Meet the team</h2>
+      <p class="text-section__info">Say hello & see what we do</p>
+    </section>
+    <div class="cards">
+      <section class="card">
+        <img class="card__img" src="images/sunset.jpg" alt="colourful sunset" />
+        <div class="card__text">
+          <h3 class="card__text-header">Jo bloggs</h3>
+          <p class="card__text-info">Web dev</p>
+        </div>
+        <nav class="card__links">
+          <a href="">twitter</a>
+          <a href="">facebook</a>
+          <a href="">instagram</a>
+        </nav>
+      </section>
+      <section class="card">
+        <img class="card__img" src="images/sunset.jpg" alt="colourful sunset" />
+        <div class="card__text">
+          <h3 class="card__text-header">Jo bloggs</h3>
+          <p class="card__text-info">Designer</p>
+        </div>
+        <nav class="card__links">
+          <a href="">twitter</a>
+          <a href="">facebook</a>
+          <a href="">instagram</a>
+        </nav>
+      </section>
     </div>
-    <section class="image-overlay">
-      <h2 class="image-overlay__header">Magic moments</h2>
-      <p class="image-overlay__text">in a dream, far far away</p>
-    </section>
-    <section class="text-info">
-      <h2 class="text-info__header">Meet the team</h2>
-      <p class="text-info__text">There was a castle in the sky</p>
-    </section>
-    <section class="card">
-      <img class="card__img" src="images/sunset.jpg" alt="colourful sunset" />
-      <div class="card__text">
-        <h3 class="card__text-header">Jo bloggs</h3>
-        <p class="card__text-info">Web dev</p>
-      </div>
-      <nav class="card__links">
-        <a href="">twitter</a>
-        <a href="">facebook</a>
-        <a href="">instagram</a>
-      </nav>
-    </section>
-    <section class="card">
-      <img class="card__img" src="images/sunset.jpg" alt="colourful sunset" />
-      <div class="card__text">
-        <h3 class="card__text-header">Jo bloggs</h3>
-        <p class="card__text-info">Designer</p>
-      </div>
-      <nav class="card__links">
-        <a href="">twitter</a>
-        <a href="">facebook</a>
-        <a href="">instagram</a>
-      </nav>
-    </section>
-
     <footer class="footer">
       <p class="footer__text">Made & designed by me</p>
     </footer>
